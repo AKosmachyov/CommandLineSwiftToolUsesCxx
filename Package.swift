@@ -24,5 +24,14 @@ let package = Package(
             dependencies: ["Fibonacci"],
             swiftSettings: [.interoperabilityMode(.Cxx)]
         ),
+        
+        .target(
+            name: "ObjFibonacci",
+            dependencies: ["Fibonacci"]
+        ),
+        .testTarget(
+            name: "ObjcTests",
+            dependencies: ["ObjFibonacci"]
+        ),
     ]
 )
